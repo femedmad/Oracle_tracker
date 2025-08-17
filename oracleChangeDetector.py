@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
 import os
 import time
 import subprocess
@@ -15,14 +12,13 @@ REPO_CLONE_PATH = BASE_DIR / "defillama-server"
 DATA_SUBDIR     = "defi/src/protocols"
 DATA_ABS_PATH   = REPO_CLONE_PATH / DATA_SUBDIR
 
-# ▶️ This should now point to your Tree-sitter tracker with HTML print_human
 TRACKER_PATH    = BASE_DIR / "track_oracles_ts.py"
 
 RUN_INTERVAL_S = int(os.environ.get("ORACLE_RUN_INTERVAL_S", "30"))
 
 TG_BOT_TOKEN  = os.environ.get("TG_BOT_TOKEN", "").strip()
 TG_CHAT_ID    = os.environ.get("TG_CHAT_ID", "").strip()
-TG_PARSE_MODE = os.environ.get("TG_PARSE_MODE", "HTML")   # ⬅️ HTML mode for rich formatting
+TG_PARSE_MODE = os.environ.get("TG_PARSE_MODE", "HTML")
 SEND_IF_NO_CHANGES = os.environ.get("ORACLE_SEND_IF_NO_CHANGES", "1") == "1"
 
 ALLOWED_DATA_FILES = {"data.ts", "data1.ts", "data2.ts", "data3.ts", "data4.ts"}
